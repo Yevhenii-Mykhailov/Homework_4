@@ -79,16 +79,7 @@ namespace Project_4
                 lastIndex--;
             }
 
-            int[] newArray = new int [array.Length];
-            for (int i = 0, j = 0; i < array.Length; i++)
-            {
-                if (array[i] > 0)
-                {
-                    newArray[j++] = array[i];
-                }
-            }
-
-            return newArray;
+            return array;
         }
 
         static int GetCountOfOdds(int[] array)
@@ -110,7 +101,6 @@ namespace Project_4
             int[] resultArray;
             int[] firsHalfArray = GetFirstHalfArray(array, halfOfArray);
             int[] secondHalfArray = GetSecondHalfArray(array, halfOfArray);
-            int[] secondHalfArrayOdd = GetSecondHalfOfArrayOdd(array, halfOfArray);
 
             if (array.Length % 2 == 0)
             {
@@ -127,6 +117,7 @@ namespace Project_4
             }
             else
             {
+                int[] secondHalfArrayOdd = GetSecondHalfOfArrayOdd(array, halfOfArray);
                 resultArray = new int[array.Length];
                 for (int i = 0; i < halfOfArray + 1; i++)
                 {
@@ -182,26 +173,7 @@ namespace Project_4
 
         static void Main(string[] args)
         {
-            int size = 11;
-            Random random = new Random();
-            int[] array = new int[size];
-            for (int i = 0; i < size; i++)
-            {
-                array[i] = random.Next(-15, 25);
-            }
 
-            for (int i = 0; i < array.Length; i++)
-            {
-                Console.Write(array[i] + " ");
-            }
-
-            Console.WriteLine();
-
-            int[] result = SwapHalfOfArray(array);
-            for (int i = 0; i < result.Length; i++)
-            {
-                Console.Write(result[i] + " ");
-            }
         }
 
         private static void Swap(ref int a, ref int b)
@@ -209,16 +181,6 @@ namespace Project_4
             int temp = a;
             a = b;
             b = temp;
-        }
-
-        private static void PrintArray(int[] array)
-        {
-            for (int i = 0; i < array.Length; i++)
-            {
-                Console.Write(array[i] + " ");
-            }
-
-            Console.WriteLine();
         }
 
         private static int[] GetSecondHalfArray(int[] array, int halfOfArray)
