@@ -1,4 +1,5 @@
 ﻿using System;
+using Array_library;
 
 namespace Project_4
 {
@@ -6,7 +7,6 @@ namespace Project_4
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
         }
     }
 }
